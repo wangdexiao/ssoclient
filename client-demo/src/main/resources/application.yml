@@ -1,24 +1,25 @@
 server:
-  port: 9002
-  servlet:
-    session:
-      cookie:
-        name: OAUTH2SESSION
+    port: 9002
+    servlet:
+        session:
+            cookie:
+                name: OAUTH2SESSION
 logging.level.org.springframework: debug
 
-#spring:
-#  freemarker:
-#    template-loader-path: classpath:/templates/
-
+spring:
+    freemarker:
+        template-loader-path: classpath:/templates/
+        enable: true
+        suffix: .ftl
 security:
-  oauth2:
-    client:
-      client-id: client_id
-      client-secret: 123456
-      access-token-uri: http://127.0.0.1:9000/oauth/token
-      user-authorization-uri: http://127.0.0.1:9000/oauth/authorize
-      token-name: access_token
-      authentication-scheme: query
-      client-authentication-scheme: form
-    resource:
-      token-info-uri: http://127.0.0.1:9000/oauth/check_token
+    oauth2:
+        client:
+            client-id: client_id
+            client-secret: 123456
+            access-token-uri: http://127.0.0.1:9000/oauth/token
+            user-authorization-uri: http://127.0.0.1:9000/oauth/authorize
+            token-name: access_token
+            authentication-scheme: query
+            client-authentication-scheme: form
+        resource:
+            token-info-uri: http://127.0.0.1:9000/oauth/check_token

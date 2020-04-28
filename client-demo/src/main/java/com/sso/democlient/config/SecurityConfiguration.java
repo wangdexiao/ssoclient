@@ -27,6 +27,15 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @EnableOAuth2Sso
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.antMatcher("/**")
+                .authorizeRequests()
+                .antMatchers("/", "/login**")
+                .permitAll()
+                .anyRequest()
+                .authenticated();
+        http.csrf().disable();
+    }
 
 }
