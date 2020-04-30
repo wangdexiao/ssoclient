@@ -16,8 +16,8 @@ security:
         client:
             client-id: client_id
             client-secret: 123456
-            access-token-uri: http://127.0.0.1:9000/oauth/token
-            user-authorization-uri: http://127.0.0.1:9000/oauth/authorize
+            access-token-uri: http://127.0.0.1:9000/oauth/token #令牌断点
+            user-authorization-uri: http://127.0.0.1:9000/oauth/authorize #授权端点
             token-name: access_token
             authentication-scheme: query
             client-authentication-scheme: form
