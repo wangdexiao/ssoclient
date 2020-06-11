@@ -31,10 +31,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.antMatcher("/**")
                 .authorizeRequests()
+                .antMatchers("/permisson").hasAuthority("sys:permission:add")
+                .antMatchers("/permisson2").hasAuthority("11111111111")
                 .antMatchers("/", "/login**")
                 .permitAll()
                 .anyRequest()
-                .authenticated();
+                .authenticated()
+                .and()
+                    .logout().logoutSuccessUrl("http://127.0.0.1:9000/authserver/logout");
         http.csrf().disable();
     }
 

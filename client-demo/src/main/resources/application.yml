@@ -4,6 +4,7 @@ server:
         session:
             cookie:
                 name: OAUTH2SESSION
+        context-path: /client
 logging.level.org.springframework: debug
 
 spring:
@@ -23,7 +24,7 @@ security:
 #            client-authentication-scheme: form
             registered-redirect-uri: http://127.0.0.1:9000/authserver/login
         resource:
-            token-info-uri: http://127.0.0.1:9000/authserver/oauth/check_token
+#            token-info-uri: http://127.0.0.1:9000/authserver/oauth/check_token
             jwt:
                 key-uri: http://127.0.0.1:9000/authserver/oauth/token_key
 
